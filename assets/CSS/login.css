@@ -1,0 +1,110 @@
+
+/*****************login page ******************************/
+
+.container-login{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 250px 360px 1fr;
+    grid-template-areas: "login-title" "login-form" "login-footer";
+    height: 100vh;
+    text-align: center;
+}
+
+.login-title{
+    grid-area: login-title;
+    padding: 0 20px;
+}
+
+.login-title h1{
+    color: #1877f2;
+    font-size: 4rem;
+    margin: 15px;
+}
+
+.login-title p{
+    font-size: 1.5rem;
+}
+
+.login-form{
+    grid-area: login-form;
+    margin: 0 auto;
+    width: 340px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(0 0 0 /10%), 0 8px 16px rgb(0 0 0 /20%);
+}
+
+.login-form .form-row{
+    margin: 5px 0;
+}
+
+.login-form .form-row input{
+    height: 50px;
+    font-size: 1.2rem;
+    width: 95%;
+    border-radius: 5px; /** pour arrondir notre input **/
+    border: 1px solid #ccc;
+    outline: none; /** elle permet de definir en une seule fois une ou plusieurs propriétés : outline-style, outline-width et outline-color. **/
+}
+
+.login-form .form-button .bt-login-submit{
+    background-color:#1877f2;  
+    color: white;
+    width: 95%;
+}
+
+.login-form .form-info p a{
+    text-decoration: none; /** enlever le soulignement **/
+    color: #1877f2;
+}
+
+.login-form .divider {
+    border: 0.1px solid gray;
+    width: 90%;
+    margin: 0 auto; /** pour centrer l'element **/
+    margin-bottom: 20px; 
+}
+
+.login-form .form-button .bt-login-create-account{
+    background-color: #42b72a;
+    width: 70%;
+}
+
+.login-footer{
+    grid-area: login-footer;
+    width: 340px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.login-footer p a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+@media screen and (min-width: 900px) {
+    .container-login{
+        padding: 200px 50px;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 360px 1fr ;
+        grid-template-areas: "login-title login-form" "none login-footer";
+    }
+
+    .login-form {
+        width: 400px;
+    }
+    
+    .login-title {
+        text-align: left;
+    }  
+}
+
+@media screen and (min-width: 1450px) {
+    .container-login{
+        grid-template-columns: 600px 400px;
+        justify-content: center;
+
+    }
+    
+}

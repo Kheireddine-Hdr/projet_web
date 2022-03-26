@@ -1,0 +1,170 @@
+
+.container-register{
+    width: 500px;
+    height: 650px;
+    position: absolute; /** le retirer du flou normal d'affichage **/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 4px rgb(0 0 0/10%), 0 8px 16px rgb(0 0 0/33%) ;
+    border-radius: 5px;
+   display: none;
+   background-color: white;
+   z-index: 2; /** ce formulaire va rendre transparent (le cacher) la page login car sa valeur est superieure à container-login **/
+}
+
+.container-register .close {
+    position: absolute; /** l'element sera retirer du flux normal d'affichage et sera positionner par apport à son parent, mais aussi cela permet d'attribut son espace à d'autres éléments **/
+    right: 5px;
+    font-size: 1.5rem;
+    color:#ccc;
+    cursor: pointer;
+}
+
+.container-register .register-title{
+    padding-left: 10px;
+}
+
+.container-register .register-title h2{
+    font-size: 2.3rem;
+}
+.container-register .register-title p{
+    color: grey;
+    margin-top: -20px;
+    font-size: 1.1rem;
+}
+
+.container-register .divider{
+    border: 0.1px solid #ccc;
+}
+
+/************************************** Register form ***********************************************/
+
+.container-register .register-form{
+    padding: 10px;
+}
+
+.container-register .register-form input{
+    width: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 10px 0;
+    margin-bottom: 10px;  
+}
+
+.container-register .register-form .form-group-input{
+    display: flex;
+    gap: 10px;
+}
+
+.container-register .register-form .form-inline-input{
+    display: flex;
+}
+.container-register .register-form .form-group-input input, .form-inline-input input{
+    flex: 1;
+}
+
+.container-register .register-form .form-inline-date {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-register .register-form .form-inline-date .form-select-date{
+    display: flex;
+    gap: 5px;
+}
+
+.container-register .register-form .form-inline-date p{
+    color: gray;
+    font-size: 0.9rem;    
+}
+
+.container-register .register-form .form-inline-date .form-select-date select{
+    flex: 1;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.2rem ;
+}
+
+.container-register .register-form .form-inline-genre p{
+    color: gray;
+    font-size: 0.9rem; 
+}
+
+.container-register .register-form .form-inline-genre .form-radio-items{
+    display: flex;
+    gap: 5px;
+}
+
+.container-register .register-form .form-inline-genre .form-radio-item{
+    border: 1px solid #ccc;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.container-register .register-form .form-inline-genre .form-radio-item label {
+    position: relative;
+    top: 8px;
+    
+}
+
+.container-register .register-form .form-inline-genre .form-radio-item input{
+    position: relative;
+    top: 6px;
+}
+
+.container-register .form-register-info {
+    font-size: 0.9em;
+    text-align: justify;
+    color: gray;
+}
+
+.container-register .form-register-button{
+    text-align: center;
+    margin-top: 20px;   
+}
+
+.overlay{
+    background-color: rgba(255, 255, 255, .8); /** rendre le back transparent **/
+    position: absolute; /** le retirer du flux normal d'affichage **/ 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /** definit le z-order détermine l'ordre des différentes couches que formeront les éléments. Généralement, 
+                un élément couvrira un autre élément si sa valeur de z-index est supérieure à celle du deuxième élément. **/
+    display: none;
+}
+
+.container-register .form-register-button .bt-register-submit{
+    background-color: #00a400;
+    width: 200px;
+    height: 40px;
+    line-height: 5px; /**centrer le text dans un button ou autre jouer de haut et de bas **/
+    color: white;  
+}    
+
+@media screen and (max-width: 600px) {
+    .container-register {
+        width: 359px;
+    }
+
+    .container-register .register-form .form-inline-genre .form-radio-item label{
+        font-size: 0.6em;   
+    } 
+
+    .container-register .form-register-button{
+        margin-top: 2px;   
+    }
+    
+}
+
+
+
+

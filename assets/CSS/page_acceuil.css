@@ -1,0 +1,350 @@
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container-home{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "aside-left content aside-right";
+}
+
+header{
+    height: 65px;
+    grid-area: header;
+    padding-left: 20px;
+    font-size: 2.3rem;
+    display: flex;
+    position: fixed;
+    background-color: white;
+    width: 100vw;
+}
+
+#aside-left{
+    background-color: green;
+    grid-area: aside-left;
+}
+
+#aside-right{
+    background-color: brown;
+    grid-area: aside-right;
+}
+
+.content{
+    background-color: gold;
+    grid-area: content;
+}
+
+/****************************************** MENU *************************************************/
+
+#header-left,  #header-center, #header-right, .user-info, .header-icon{
+    display: flex;
+    align-items: center; 
+}
+
+#header-left{
+   flex: 1;
+   gap: 10px; 
+   position: relative;
+   bottom: 5px;
+}
+
+.logo img{
+    width: 50px;
+    border-radius: 70px;
+    margin-top: 15px;
+}
+
+#header-left .search-bar input{
+    height: 40px;
+    padding: 20px;
+    padding-left: 30px;
+    margin-top: 5px;
+    border-radius: 15px;
+    outline: none;
+    border: 1px solid #ccc;
+    width: 95%;
+    font-size: 0.5em;
+}
+
+#header-left .search-bar{
+    position: relative;
+    flex: 1;
+}
+
+#header-left .search-bar .fa-magnifying-glass{
+    position: absolute;
+    font-size: 0.7em;
+    color: #ccc;
+    top: 15px;
+    left: 3px;
+}
+
+#header-center{
+   flex: 3;
+   justify-content: center;
+
+}
+
+#header-center .header-icon{
+    flex: 0 1 100px;
+    text-align: center;
+    cursor: pointer;
+ }
+
+ #header-center .header-icon .header-icon-center:hover{
+     font-size: 1em;
+ }
+
+#header-center .header-icon .header-icon-center{
+    flex: 1;
+    text-align: center; 
+    color: gray; 
+    font-size: 0.8em; 
+ }
+ 
+ #header-right {
+     flex: 1;
+     gap: 5px;
+     margin: 0 30px;
+}
+
+ #header-right .user-info{
+     gap: 5px;
+ }
+
+ #header-right .user-picture img {
+     width: 50px;
+     border-radius: 100px;
+     margin-top: 5px;
+ }
+
+#header-right .user-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+    color: gray;
+}
+
+#header-right .header-icon{
+    flex: 1;
+    gap: 5px;
+    cursor: pointer;
+}
+
+#header-right .header-icon:hover{
+    font-size: 1.2em;
+}
+
+
+#header-right .header-icon .header-icon-right{
+    flex: 1;
+    text-align: center;
+    color: gray;
+    font-size: 0.7em;
+    padding: 10px;
+    background-color: #ccc;
+    border-radius: 100%;
+}
+
+header .header-icon{
+    position: relative;   
+}
+
+header .notification {
+    background-color: #fa383e;
+    padding:5px;
+    border-radius: 50px;
+    display: block;
+    width: 18px;
+    height: 18px;
+    font-size: 0.6em;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+
+}
+
+header #header-center .header-icon .notification {
+    bottom: 17px;
+    left: 55px;
+}
+
+header #header-right .header-icon .notification {
+    z-index: 1;
+    bottom: 25px;
+    left: 32px;
+}
+
+
+
+
+
+
+ 
+
+
+/****************************************** RESPONSIVE *********************************************/
+
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+   
+    .container-home {
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas: "content aside-right";
+    }
+    
+    #aside-left{
+        display: none;
+    }
+
+    #header-right .user-info{
+        display: none;
+    }
+
+    #header-left .search-bar input{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+
+    #header-left .search-bar input:hover{
+        width: 200px;
+        border-radius: 20px;
+        padding-left: 33px;
+    }
+
+    #header-left .search-bar input::placeholder{
+       visibility: hidden; /** ne pas afficher le placeholder **/
+    }
+
+    #header-left .search-bar .fa-magnifying-glass{     
+        top: 20px;
+        left: 8px;
+        font-size: 0.6em;
+    }
+
+    #header-left{
+        flex: none;
+    }
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+
+    .container-home{
+        grid-template-columns: 1fr;
+        grid-template-areas: "content";
+    }
+
+    #aside-right, #aside-left{
+        display: none;
+    } 
+
+    #header-right .user-info{
+        display: none;
+    }
+
+    #header-left .search-bar input{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+    }
+
+    #header-left .search-bar input{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+
+    #header-left .search-bar input:hover{
+        width: 200px;
+        border-radius: 20px;
+        padding-left: 33px;
+    }
+
+
+    #header-left .search-bar input::placeholder{
+       visibility: hidden; /** ne pas afficher le placeholder **/
+    }
+
+    #header-left .search-bar .fa-magnifying-glass{     
+        top: 17px;
+        left: 12px;
+    }
+
+    #header-left{
+        flex: none;
+    }
+
+    #header-center .header-icon:nth-child(1), 
+    #header-center .header-icon:nth-child(2), 
+    #header-center .header-icon:nth-child(3),
+    #header-center .header-icon:nth-child(4), 
+    #header-center .header-icon:nth-child(5) {
+        display: none;
+    }   
+}
+
+@media screen and (max-width: 600px) {
+
+    .container-home{
+        grid-template-columns: 1fr;
+        grid-template-areas: "content";
+    }
+
+    #aside-right, #aside-left{
+        display: none;
+    } 
+    
+    #header-right .user-info{
+        display: none;
+    }
+    
+    #header-left .search-bar input{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+    }
+
+    #header-left .search-bar input{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+
+    #header-left .search-bar input:hover{
+        width: 200px;
+        border-radius: 20px;
+        padding-left: 33px;
+    }
+
+
+    #header-left .search-bar input::placeholder{
+       visibility: hidden; /** ne pas afficher le placeholder **/
+    }
+
+    #header-left .search-bar .fa-magnifying-glass{     
+        top: 20px;
+        left: 10px;
+        font-size: 0.6em;
+    }
+
+    #header-left{
+        flex: none;
+    }
+
+    #header-center .header-icon:nth-child(1), 
+    #header-center .header-icon:nth-child(2), 
+    #header-center .header-icon:nth-child(3),
+    #header-center .header-icon:nth-child(4), 
+    #header-center .header-icon:nth-child(5) {
+        display: none;
+    }   
+}
